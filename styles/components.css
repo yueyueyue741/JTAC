@@ -1,0 +1,110 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-l1);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border-color: var(--color-border-default);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.floating-entry-card {
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-l1);
+  box-shadow: var(--shadow-l1);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-fast);
+}
+
+.floating-entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-p1);
+}
+
+.floating-entry-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.main-orb-button {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 20%, var(--color-accent-tertiary), var(--color-accent-primary));
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3);
+  transition: var(--transition-default);
+}
+
+.main-orb-button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-l2);
+}
+
+.main-orb-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.bottom-nav-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  transition: var(--transition-fast);
+}
+
+.bottom-nav-button.is-active {
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-l1);
+}
+
+.bottom-nav-button-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 5em;
+}
+
