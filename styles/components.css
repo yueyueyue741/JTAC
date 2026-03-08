@@ -338,7 +338,7 @@
 .floating-entry-card {
   position: absolute;
   width: 80px;
-  height: 80px;
+  height: 80px; /* 必须为正方形 */
   background: var(--color-bg-l1);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-p1);
@@ -347,9 +347,11 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  cursor: move;
+  cursor: pointer;
   transition: var(--transition-default);
   z-index: var(--z-p1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-entry-card:hover {
@@ -357,14 +359,24 @@
   box-shadow: var(--shadow-l2);
 }
 
+.floating-entry-card:active {
+  transform: scale(0.98);
+}
+
 .floating-entry-card__icon {
   width: 32px;
   height: 32px;
   color: var(--color-text-primary);
+  flex-shrink: 0;
 }
 
 .floating-entry-card__label {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
   text-align: center;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
