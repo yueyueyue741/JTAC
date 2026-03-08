@@ -1,0 +1,83 @@
+/* 基础重置 */
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { 
+    font-family: var(--font-family-sans); 
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-900);
+    background-color: var(--color-bg-l0);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* 层级系统 (Section 6) [cite: 74, 75, 76, 77] */
+.ui-layer-l0 { position: fixed; inset: 0; z-index: 0; }
+.ui-layer-l1 { position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column; }
+.ui-layer-l3 { position: fixed; inset: 0; z-index: 999; background: var(--color-bg-l0); }
+
+/* 加载界面样式 (Section 7.1) [cite: 78] */
+#loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--duration-normal) ease, transform var(--duration-normal) var(--ease-spring);
+}
+.loading-content { text-align: center; }
+.logo-icon { width: 64px; height: 64px; color: var(--color-accent-primary); margin-bottom: var(--space-4); }
+.app-name { font-size: var(--font-size-xl); letter-spacing: 4px; margin-bottom: 32px; font-weight: var(--font-weight-semibold); }
+.progress-container { width: 240px; height: 2px; background: var(--color-neutral-200); margin: 0 auto 12px; overflow: hidden; }
+.progress-bar { width: 40%; height: 100%; background: var(--color-accent-primary); transition: width 1.5s ease-out; }
+
+/* 主空间布局 (Section 7.2) [cite: 83, 84] */
+.main-header { padding: 40px 24px; display: flex; justify-content: space-between; align-items: flex-start; }
+.world-name { display: block; font-size: 20px; font-weight: 600; margin-top: 4px; }
+.btn-manage { background: none; border: 1px solid var(--color-neutral-200); padding: 6px 16px; border-radius: var(--radius-full); font-size: 13px; }
+
+/* 悬浮入口卡片 [cite: 80, 81] */
+.entry-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 0 24px; }
+.floating-card {
+    background: var(--color-base-white);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-l1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.floating-card:active { transform: scale(0.96); }
+.floating-card i { color: var(--color-accent-primary); width: 24px; }
+
+/* 中央主神按钮 [cite: 82] */
+.center-hub { flex: 1; display: flex; align-items: center; justify-content: center; }
+.hub-button {
+    width: 96px; height: 96px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-accent-primary), #E6D8C1);
+    border: none;
+    color: white;
+    box-shadow: var(--shadow-accent);
+    cursor: pointer;
+    transition: transform var(--duration-normal) var(--ease-spring);
+}
+.hub-button:hover { transform: scale(1.05); }
+
+/* 底部导航栏 [cite: 83, 84] */
+.bottom-nav {
+    height: 72px;
+    padding-bottom: 20px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: var(--glass-light);
+    border-top: 1px solid var(--color-neutral-100);
+}
+.nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--color-neutral-400); font-size: 11px; }
+.nav-item.active { color: var(--color-accent-primary); }
+
+/* 响应式适配：PC端显示为手机比例容器 */
+@media (min-width: 768px) {
+    body { display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; }
+    #main-space, #loading-screen { width: 390px; height: 844px; border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; background: var(--color-bg-l0); }
+}
+
+.hidden { display: none !important; }

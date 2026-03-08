@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JTAC快穿养成 - 快穿宇宙主空间</title>
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div id="loading-screen" class="ui-layer-l3">
+        <div class="loading-content">
+            <div class="app-logo">
+                <i data-feather="box" class="logo-icon"></i>
+            </div>
+            <h1 class="app-name">JTAC</h1>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="loading-status">正在构建你的平行宇宙...</p>
+        </div>
+    </div>
+
+    <div id="global-bg" class="ui-layer-l0"></div>
+
+    <main id="main-space" class="ui-layer-l1 hidden">
+        <header class="main-header">
+            <div class="current-world-info">
+                <span class="label">当前世界</span>
+                <span class="world-name" id="active-world-name">未加载</span>
+            </div>
+            <button class="btn-manage">管理</button>
+        </header>
+
+        <section class="entry-cards">
+            <div class="floating-card" data-action="world-jump">
+                <i data-feather="compass"></i>
+                <span>世界跃迁</span>
+            </div>
+            <div class="floating-card" data-action="world-archive">
+                <i data-feather="archive"></i>
+                <span>世界档案</span>
+            </div>
+            <div class="floating-card" data-action="lebotalk">
+                <i data-feather="message-circle"></i>
+                <span>乐博通</span>
+            </div>
+            <div class="floating-card" data-action="mishu">
+                <i data-feather="book-open"></i>
+                <span>密书</span>
+            </div>
+        </section>
+
+        <section class="center-hub">
+            <button class="hub-button" id="enter-world">
+                <div class="hub-ripple"></div>
+                <i data-feather="zap"></i>
+            </button>
+        </section>
+
+        <nav class="bottom-nav">
+            <div class="nav-item" id="nav-api">
+                <i data-feather="sliders"></i>
+                <span>API 设置</span>
+            </div>
+            <div class="nav-item active" id="nav-system">
+                <i data-feather="settings"></i>
+                <span>系统设置</span>
+            </div>
+            <div class="nav-item" id="nav-theme">
+                <i data-feather="palette"></i>
+                <span>美化设置</span>
+            </div>
+        </nav>
+    </main>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
