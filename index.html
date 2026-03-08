@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>JTAC快穿养成</title>
+    <meta name="description" content="JTAC快穿养成 · 本地运行的快穿宇宙操作台" />
+    <link rel="stylesheet" href="./styles/theme.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <!-- Iconify: 初始图标库（Feather / Tabler / Material Symbols 等） -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <div id="jtac-root" class="app-shell">
+      <main class="app-main">
+        <section class="main-hero">
+          <div class="main-hero__brand">
+            <div class="brand-mark">
+              <span class="brand-mark__orb"></span>
+            </div>
+            <div class="brand-text">
+              <h1 class="brand-text__title">JTAC快穿养成</h1>
+              <p class="brand-text__subtitle">你的多世界主神空间</p>
+            </div>
+          </div>
+          <p class="main-hero__hint">
+            本地运行 · 零后端 · Design Token 驱动的快穿宇宙操作台。
+          </p>
+        </section>
+
+        <section class="main-space">
+          <div class="main-space__float-grid">
+            <button class="entry-card" data-entry="world-transition">
+              <span class="entry-card__icon">
+                <iconify-icon icon="feather:compass"></iconify-icon>
+              </span>
+              <span class="entry-card__label">世界跃迁</span>
+            </button>
+            <button class="entry-card" data-entry="world-archive">
+              <span class="entry-card__icon">
+                <iconify-icon icon="feather:archive"></iconify-icon>
+              </span>
+              <span class="entry-card__label">世界档案</span>
+            </button>
+            <button class="entry-card" data-entry="lebotalk">
+              <span class="entry-card__icon">
+                <iconify-icon icon="tabler:message-circle"></iconify-icon>
+              </span>
+              <span class="entry-card__label">乐博通</span>
+            </button>
+            <button class="entry-card" data-entry="mishu">
+              <span class="entry-card__icon">
+                <iconify-icon icon="tabler:notebook"></iconify-icon>
+              </span>
+              <span class="entry-card__label">密书</span>
+            </button>
+          </div>
+
+          <button class="main-orb" type="button">
+            <span class="main-orb__ring"></span>
+            <span class="main-orb__core">
+              <iconify-icon icon="feather:zap"></iconify-icon>
+            </span>
+            <span class="main-orb__label">进入当前世界</span>
+          </button>
+        </section>
+      </main>
+
+      <nav class="bottom-nav bottom-nav--main">
+        <button class="bottom-nav__item bottom-nav__item--active" data-tab="api">
+          <span class="bottom-nav__icon">
+            <iconify-icon icon="feather:sliders"></iconify-icon>
+          </span>
+          <span class="bottom-nav__label">API设置</span>
+        </button>
+        <button class="bottom-nav__item" data-tab="system">
+          <span class="bottom-nav__icon">
+            <iconify-icon icon="feather:settings"></iconify-icon>
+          </span>
+          <span class="bottom-nav__label">系统设置</span>
+        </button>
+        <button class="bottom-nav__item" data-tab="theme">
+          <span class="bottom-nav__icon">
+            <iconify-icon icon="material-symbols:palette-outline"></iconify-icon>
+          </span>
+          <span class="bottom-nav__label">美化设置</span>
+        </button>
+      </nav>
+    </div>
+
+    <script src="./scripts/core/app.js"></script>
+  </body>
+</html>
+
