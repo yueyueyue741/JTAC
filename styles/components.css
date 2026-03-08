@@ -1,0 +1,51 @@
+/* 通用基础组件样式：按钮、卡片、输入框等 */
+
+.jtac-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-accent);
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition-fast);
+}
+
+.jtac-button--ghost {
+  background-color: transparent;
+  color: var(--color-text-accent);
+  border-color: rgba(0, 0, 0, 0.04);
+}
+
+.jtac-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.jtac-card {
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-l1);
+  box-shadow: var(--shadow-l1);
+  padding: var(--space-4);
+}
+
+.jtac-input {
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-l1);
+  color: var(--color-text-primary);
+}
+
+.jtac-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
