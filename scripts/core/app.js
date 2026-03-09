@@ -6,6 +6,7 @@
 import { openDB } from './storage.js';
 import { activate, getActiveWorldId } from './world-context.js';
 import { navigate, setRouteHandler } from './router.js';
+import { render as renderMainSpace } from '../modules/main-space.js';
 
 const ROOT_ID = 'app-root';
 
@@ -25,7 +26,11 @@ export async function init() {
       return;
     }
     if (route === 'main-space') {
-      root.innerHTML = '<div class="main-space-placeholder">主空间（待 main-space.js 挂载）</div>';
+      root.innerHTML = '';
+      renderMainSpace(root, {
+        activeTab: 'player',
+        onTabChange: () => {}
+      });
       return;
     }
     root.innerHTML = `<div class="view-placeholder">${route}</div>`;
