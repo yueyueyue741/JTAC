@@ -1,0 +1,87 @@
+/**
+ * 全局动画关键帧与过渡定义
+ * 意图驱动动效：引导、反馈、叙事；以 transform + opacity 为主
+ */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 加载进度条（Section 7.1） */
+@keyframes progress-fill {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+/* 主空间粒子/雪尘漂浮（Section 7.2.1 动态背景）
+ *
+ * 命名规范：
+ * - 粒子容器类：.main-space-particles（见 layout.css，挂载在主空间 L0/L1 装饰层）
+ * - 单个粒子类：.main-space-particle（见 layout.css，负责尺寸/圆角/阴影）
+ * - 关键帧名称：@keyframes main-space-snow
+ *
+ * Token 与属性约束：
+ * - 只能使用 transform / translate3d 与 opacity 控制运动与淡入淡出；
+ * - 动画时长必须引用 --duration-enter 或 --duration-normal；
+ * - 动画缓动必须引用 --ease-out 或 --ease-smooth；
+ * - 不得在关键帧中直接操作 box-shadow/filter/backdrop-filter 等高开销属性，
+ *   重量感与光晕由静态样式中的 box-shadow Token 控制。
+ *
+ * 使用示例（约定）：
+ * - .main-space-particle { animation: main-space-snow var(--duration-enter) var(--ease-out) infinite alternate; }
+ * - 粒子数量与密度由 mainSpaceBackgroundConfig / Theme 配置决定，而非在 CSS 中写死。
+ */
+@keyframes main-space-snow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate3d(4px, -6px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-4px, -16px, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-enter) var(--ease-smooth) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in var(--duration-enter) var(--ease-spring) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up var(--duration-normal) var(--ease-smooth) forwards;
+}
